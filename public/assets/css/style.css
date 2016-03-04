@@ -1,0 +1,21 @@
+@media only screen and (min-width:851px){
+	.mdl-layout__drawer-button {
+	    display: none;
+	}
+}
+
+.site-header {
+    height: 56px;
+    height: 3.5rem;
+    background: #fff;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.35);
+    left: 0;
+    /*position: fixed;*/
+    top: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+.menu_navigation {
+    color: #848484 !important;
+}

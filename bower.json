@@ -1,0 +1,31 @@
+{
+  "name": "photo",
+  "description": "A web application which allows photographer to showcase their images in a very seamless way and free.",
+  "main": "server.js",
+  "authors": [
+    "Gene Lim"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "photography",
+    "showcase"
+  ],
+  "homepage": "https://github.com/genelim/photo",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/libs",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "material-design-lite": "^1.1.1",
+    "angular": "^1.5.0",
+    "angular-resource": "^1.5.0",
+    "angular-ui-router": "^0.2.18",
+    "components-font-awesome": "^4.5.0",
+    "ng-file-upload": "^12.0.1"
+  }
+}

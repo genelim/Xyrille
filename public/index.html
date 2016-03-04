@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="/libs/material-design-lite/material.min.css"></link>
+	<link rel="stylesheet" href="/libs/components-font-awesome/css/font-awesome.min.css"></link>
+	<link rel="stylesheet" href="/assets/css/style.css"></link>
+	<base href="/">
+</head>
+<body ng-app="app">
+	<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+	  	<header class="mdl-layout__header site-header">
+	    	<div class="mdl-layout__header-row ">
+	            <span class="mdl-layout-title" style="color:grey;">Photo</span>
+		        <div class="mdl-layout-spacer"></div>
+	      		<nav class="mdl-navigation mdl-layout--large-screen-only">
+			        <a class="mdl-navigation__link menu_navigation" href="">Blog</a>
+			        <button class="mdl-button mdl-button--raised mdl-button--colored mdl-js-button mdl-js-ripple-effect">Sign In</button>
+	      		</nav>
+	    	</div>
+	  	</header>
+	  	<div class="mdl-layout__drawer">
+	    	<span class="mdl-layout-title">Title</span>
+			<nav class="mdl-navigation">
+		      	<a class="mdl-navigation__link" href="">Blog</a>
+		      	<a class="mdl-navigation__link" href="">Sign In</a>
+			</nav>
+	  	</div>
+	  	<main class="mdl-layout__content">
+	    	<div class="page-content">
+				<div ui-view></div>
+	    	</div>
+	  	</main>
+	</div>
+
+	<script src="libs/angular/angular.min.js"></script>
+	<script src="libs/angular-resource/angular-resource.min.js"></script>
+	<script src="libs/angular-ui-router/release/angular-ui-router.min.js"></script>
+	<script src="libs/material-design-lite/material.min.js"></script>
+	<script src="libs/ng-file-upload/ng-file-upload.min.js"></script>
+	<script src="app/app.module.js"></script>
+	<script src="app/app.config.js"></script>
+</body>
+</html>
