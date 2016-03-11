@@ -4,10 +4,11 @@
 	<title></title>
 	<link rel="stylesheet" href="/libs/material-design-lite/material.min.css"></link>
 	<link rel="stylesheet" href="/libs/components-font-awesome/css/font-awesome.min.css"></link>
-	<link rel="stylesheet" href="/assets/css/style.css"></link>
+	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
+    <link rel="stylesheet" href="/assets/css/style.css"></link>
 	<base href="/">
 </head>
-<body ng-app="app">
+<body ng-app="app" ng-controller="MainController as vm">
 	<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
 	  	<header class="mdl-layout__header site-header">
 	    	<div class="mdl-layout__header-row ">
@@ -15,7 +16,7 @@
 		        <div class="mdl-layout-spacer"></div>
 	      		<nav class="mdl-navigation mdl-layout--large-screen-only">
 			        <a class="mdl-navigation__link menu_navigation" href="">Blog</a>
-			        <button class="mdl-button mdl-button--raised mdl-button--colored mdl-js-button mdl-js-ripple-effect">Sign In</button>
+			        <button class="mdl-button mdl-button--raised mdl-button--colored mdl-js-button mdl-js-ripple-effect" ng-click="vm.signin_modal_open()">Sign In</button>
 	      		</nav>
 	    	</div>
 	  	</header>
@@ -32,13 +33,53 @@
 	    	</div>
 	  	</main>
 	</div>
+    <!--<div ng-include src="'app/user/sign_in.html'"></div>-->
+
+    <dialog class="mdl-dialog" style="width: 500px;">
+        <h4 class="mdl-dialog__title">Allow data collection?</h4>
+        <div class="mdl-dialog__content">
+            <div class="login-form-div mdl-grid mdl-shadow--2dp">
+				<div class="mdl-cell mdl-cell--12-col cell_con">
+					<i class="material-icons">person</i>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+						<input class="mdl-textfield__input" type="text" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" id="sample2">
+						<label class="mdl-textfield__label" for="sample2">Enter valid Email</label>
+						<span class="mdl-textfield__error">Invalid Email...!</span>
+			        </div>
+				</div>				
+				<div class="mdl-cell mdl-cell--12-col cell_con">
+					<i class="material-icons">lock</i>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+						<input class="mdl-textfield__input" type="text" id="sample2">
+						<label class="mdl-textfield__label" for="sample2">Enter Password</label>
+			        </div>
+				</div>				
+				<div class="mdl-cell cell_con">
+					<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-2">
+						<input type="checkbox" id="checkbox-2" class="mdl-checkbox__input">
+						<span class="mdl-checkbox__label">Remember Me</span>
+				    </label>
+				</div>
+					
+        </div>
+        <div class="mdl-dialog__actions">
+            <button type="button" class="mdl-button">Register</button>
+            <button type="button" class="mdl-button close" ng-click="vm.signin_modal_close()">Login</button>
+        </div>
+    </dialog>
 
 	<script src="libs/angular/angular.min.js"></script>
 	<script src="libs/angular-resource/angular-resource.min.js"></script>
 	<script src="libs/angular-ui-router/release/angular-ui-router.min.js"></script>
 	<script src="libs/material-design-lite/material.min.js"></script>
 	<script src="libs/ng-file-upload/ng-file-upload.min.js"></script>
+    
 	<script src="app/app.module.js"></script>
 	<script src="app/app.config.js"></script>
+	<script src="app/app.run.js"></script>
+	<script src="app/main/main.js"></script>
+	<script src="app/home/home.js"></script>
 </body>
 </html>

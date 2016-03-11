@@ -10,7 +10,9 @@ function config($urlRouterProvider,$stateProvider,$locationProvider) {
     $stateProvider
     .state('home', {
         url:'/',
-        templateUrl: 'app/home/home.html'
+        templateUrl: 'app/home/home.html',
+        controller: 'HomeController',
+        controllerAs: 'vm'
     })
 
     $locationProvider.html5Mode({

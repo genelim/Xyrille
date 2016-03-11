@@ -1,3 +1,14 @@
+body {
+    font-size: 12px;
+    max-width: 10000px;
+    background: #F5F5F5;
+    min-width: 960px;
+    width: 100%;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
 @media only screen and (min-width:851px){
 	.mdl-layout__drawer-button {
 	    display: none;
@@ -18,4 +29,23 @@
 
 .menu_navigation {
     color: #848484 !important;
+}
+
+.kayitback {
+    position: absolute;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: #03A9F4 url('http://ertekinn.com/loginsignup/login.png');
+    background-size: cover;
+    background-position: 50% 50%;
+}
+
+.girisback {
+    position: absolute;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    background-size: cover;
+    background-position: 50% 50%;
 }
