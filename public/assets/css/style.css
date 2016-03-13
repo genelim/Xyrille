@@ -31,7 +31,7 @@ body {
     color: #848484 !important;
 }
 
-.kayitback {
+.left_container {
     position: absolute;
     left: 0;
     width: 50%;
@@ -41,11 +41,43 @@ body {
     background-position: 50% 50%;
 }
 
-.girisback {
+.right_container {
     position: absolute;
     right: 0;
     width: 50%;
     height: 100%;
     background-size: cover;
     background-position: 50% 50%;
+}
+
+.signin_form{
+    width: 250px;
+    margin: 0 auto;
+    top: 50%;
+    margin-top: -162px;
+    position: absolute;
+    left: 50%;
+    margin-left: -125px;
+}
+
+.user_login{
+    float:right;
+    margin: 1px;
+}
+
+.button_left.light{
+    background: rgb(33,150,243);
+    color: rgb(255,255,255);
+}
+
+.button_right.light{
+    color: rgb(33,150,243);
+}
+
+.button_right.light.title{
+    font-weight: 100;
+}
+
+.mdl-textfield--floating-label.is-focused .mdl-textfield__label.float_color{
+    color:rgb(33,150,243);
 }

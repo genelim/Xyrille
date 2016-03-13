@@ -1,12 +1,20 @@
-<dialog class="mdl-dialog">
-    <h4 class="mdl-dialog__title">Allow data collection?</h4>
-    <div class="mdl-dialog__content">
-        <p>
-        Allowing us to collect data will let us get you the information you want faster.
-        </p>
+<div class="left_container"></div>
+<div class="right_container">
+    <div class="signin_form">
+        <h2 class="button_right light title">Sign Up</h2>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="text" id="username" />
+            <label class="mdl-textfield__label float_color" for="username">Username</label>
+        </div>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="password" id="userpass" />
+            <label class="mdl-textfield__label float_color" for="userpass">Password</label>
+        </div>
+        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored user_login button_left light">
+            Login
+        </button>
+        <button class="mdl-button mdl-js-button user_login button_right light">
+            Sign Up
+        </button>
     </div>
-    <div class="mdl-dialog__actions">
-        <button type="button" class="mdl-button">Agree</button>
-        <button type="button" class="mdl-button close" ng-click="vm.signin_modal_close()">Disagree</button>
-    </div>
-</dialog>
+</div>

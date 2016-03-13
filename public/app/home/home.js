@@ -5,5 +5,4 @@ angular
 HomeController.$inject = [];
 
 function HomeController(){ 
-    componentHandler.upgradeAllRegistered();
 }

@@ -14,6 +14,12 @@ function config($urlRouterProvider,$stateProvider,$locationProvider) {
         controller: 'HomeController',
         controllerAs: 'vm'
     })
+    .state('sign_in', {
+        url:'/sign_in',
+        templateUrl: 'app/user/sign_in.html',
+        controller: 'SignInController',
+        controllerAs: 'vm'
+    })
 
     $locationProvider.html5Mode({
         enabled: true
