@@ -1,1 +1,35 @@
-Hello
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="http://localhost:8080/libs/material-design-lite/material.min.css"></link>
+	<link rel="stylesheet" href="http://localhost:8080/libs/components-font-awesome/css/font-awesome.min.css"></link>
+    <link rel="stylesheet" href="http://localhost:8080/assets/css/style.css"></link>
+</head>
+<body >
+	<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+	  	<header class="mdl-layout__header site-header">
+	    	<div class="mdl-layout__header-row ">
+	            <a href="/" class="mdl-layout-title mdl-navigation__link" style="color:grey;">Photo</a>
+		        <div class="mdl-layout-spacer"></div>
+	      		<nav class="mdl-navigation mdl-layout--large-screen-only">
+			        <a class="mdl-navigation__link menu_navigation" href="">Blog</a>
+			        <a href="/sign_in" class="mdl-button mdl-button--raised mdl-button--colored mdl-js-button mdl-js-ripple-effect">Sign In</a>
+	      		</nav>
+	    	</div>
+	  	</header>
+	  	<div class="mdl-layout__drawer">
+	    	<span class="mdl-layout-title">Title</span>
+			<nav class="mdl-navigation">
+		      	<a class="mdl-navigation__link" href="">Blog</a>
+		      	<a class="mdl-navigation__link" href="">Sign In</a>
+			</nav>
+	  	</div>
+	  	<main class="mdl-layout__content">
+	    	<div class="page-content">
+				<div ui-view></div>
+	    	</div>
+	  	</main>
+	</div>
+</body>
+</html>
