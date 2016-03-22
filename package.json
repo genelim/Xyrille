@@ -13,13 +13,16 @@
   "author": "Gene Lim",
   "license": "ISC",
   "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.15.0",
     "cookie-parser": "^1.4.1",
     "express": "^4.13.4",
     "express-session": "^1.13.0",
+    "method-override": "^2.3.5",
     "mongoose": "^4.4.6",
     "passport": "^0.3.2",
     "passport-local": "^1.0.0",
+    "path": "^0.12.7",
     "subdomain": "^1.2.0"
   }
 }

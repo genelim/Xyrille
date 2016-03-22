@@ -2,18 +2,14 @@
     <div class="signin_form">
         <h2 class="button_right light title">Sign Up</h2>
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-            <input class="mdl-textfield__input" type="text" id="username" style="border-bottom: 1px solid #b1afaf; color: #B1AFAF"/>
-            <label class="mdl-textfield__label float_color" for="username" style="color: #B1AFAF;">Username</label>
-        </div>
-        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-            <input class="mdl-textfield__input" type="text" id="email" style="border-bottom: 1px solid #b1afaf; color: #B1AFAF"/>
+            <input class="mdl-textfield__input" type="text" id="email" style="border-bottom: 1px solid #b1afaf; color: #B1AFAF" ng-model="vm.user.email"/>
             <label class="mdl-textfield__label float_color" for="email" style="color: #B1AFAF;">Email</label>
         </div>
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-            <input class="mdl-textfield__input" type="password" id="userpass" style="border-bottom: 1px solid #b1afaf;  color: #B1AFAF"/>
+            <input class="mdl-textfield__input" type="password" id="userpass" style="border-bottom: 1px solid #b1afaf;  color: #B1AFAF" ng-model="vm.user.password"/>
             <label class="mdl-textfield__label float_color" for="userpass" style="color: #B1AFAF;">Password</label>
         </div>
-        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored user_login button_left light">
+        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored user_login button_left light" ng-click="vm.signup()">
             Sign Up
         </button>
         <a href="/sign_in" class="mdl-button mdl-js-button user_login button_right light">

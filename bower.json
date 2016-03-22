@@ -10,7 +10,7 @@
     "photography",
     "showcase"
   ],
-  "homepage": "https://github.com/genelim/photo",
+  "homepage": "https://github.com/genelim/xyrille",
   "moduleType": [],
   "ignore": [
     "**/.*",
@@ -23,7 +23,7 @@
   "dependencies": {
     "material-design-lite": "^1.1.1",
     "angular": "^1.5.0",
-    "angular-resource": "^1.5.0",
+    "angular-resource": "^1.5.2",
     "angular-ui-router": "^0.2.18",
     "components-font-awesome": "^4.5.0",
     "ng-file-upload": "^12.0.1"
