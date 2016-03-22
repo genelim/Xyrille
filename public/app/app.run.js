@@ -5,4 +5,5 @@ angular
 runBlock.$inject = [];
 
 function runBlock(){ 
+    toastr.options = { "positionClass": "toast-bottom-right "}
 }

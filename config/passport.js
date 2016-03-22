@@ -3,7 +3,7 @@ var LocalStrategy   = require('passport-local').Strategy,
     
 module.exports = function(passport) {
     passport.serializeUser(function(user, done) {
-        done(null, user.id);
+        done(null, user._id);
     });
     
     passport.deserializeUser(function(id, done) {
@@ -22,10 +22,11 @@ module.exports = function(passport) {
             console.log(email)
             User.findOne({ 'local.email' :  email }, function(err, user) {
                 if (err)
-                    return done(null, {response: 'Server Error'});
+                    return done(null, false, {response: 'Server Error'});
                     
                 if (user) {
-                    return done(null, {response: 'Invalid email or password!'});
+                    return done(null, false, {response: 'Invalid email or password!'});
+                    
                 } else {
                     
                     var newUser            = new User();

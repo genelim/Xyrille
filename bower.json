@@ -26,6 +26,8 @@
     "angular-resource": "^1.5.2",
     "angular-ui-router": "^0.2.18",
     "components-font-awesome": "^4.5.0",
-    "ng-file-upload": "^12.0.1"
+    "ng-file-upload": "^12.0.1",
+    "toastr": "^2.1.2",
+    "jquery": "^2.2.2"
   }
 }

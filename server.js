@@ -2,6 +2,7 @@ var express        = require('express'),
     app            = express(),
     mongoose       = require('mongoose'),
     bodyParser     = require('body-parser'),
+    passport = require('passport'),
     cookieParser = require('cookie-parser'),
     session = require('express-session'),
     methodOverride = require('method-override'),
@@ -17,6 +18,9 @@ var subdomainOptions = {
 app.use(require('subdomain')(subdomainOptions));
 
 app.use(bodyParser.json()); 
+app.use(session({secret: 'this is multivendor', saveUninitialized: true, resave: true}));
+app.use(passport.initialize());
+app.use(passport.session());
 app.use(bodyParser.urlencoded({ extended: true })); 
 app.use(bodyParser.json({ type: 'application/vnd.api+json' })); 
 app.use(methodOverride('X-HTTP-Method-Override')); // override with the X-HTTP-Method-Override header in the request. simulate DELETE/PUT

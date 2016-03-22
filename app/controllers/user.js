@@ -5,7 +5,7 @@ exports.register = function (req, res) {
 		if(err){
 			res.json({response: 'Server Error'})
 		}else{
-            res.json(req.user);
+            res.json({response: req.user});
         }
 	})
 };

@@ -5,8 +5,7 @@ var user        = require('./controllers/user'),
     
 require('../config/passport')(passport);
 
-module.exports = function(app) {
-    app.use(passport.initialize());
+module.exports = function(app) {    
     app.post('/api/user', passport.authenticate('local-register'), user.register);
     
     app.get('/subdomain/blog/', function(request, response) {
