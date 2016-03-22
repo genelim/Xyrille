@@ -1,0 +1,22 @@
+<div class="left_container"></div>
+<div class="right_container" style="background:none !important; box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);">
+    <div class="signin_form">
+        <h2 class="button_right light title">Login</h2>
+        <form>
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input class="mdl-textfield__input" type="text" id="email" ng-model="vm.user.email"/>
+                <label class="mdl-textfield__label float_color" for="email">Email</label>
+            </div>
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input class="mdl-textfield__input" type="password" id="userpass" ng-model="vm.user.password" />
+                <label class="mdl-textfield__label float_color" for="userpass">Password</label>
+            </div>
+            <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored user_login button_left light" ng-click="vm.login()">
+                Login
+            </button>
+            <a href="/register" class="mdl-button mdl-js-button user_login button_right light">
+                Register
+            </a>
+        </form>
+    </div>
+</div>

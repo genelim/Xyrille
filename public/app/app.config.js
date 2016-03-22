@@ -14,15 +14,15 @@ function config($urlRouterProvider,$stateProvider,$locationProvider) {
         controller: 'HomeController',
         controllerAs: 'vm'
     })
-    .state('sign_in', {
-        url:'/sign_in',
-        templateUrl: 'app/user/sign_in.html',
+    .state('login', {
+        url:'/login',
+        templateUrl: 'app/user/login.html',
         controller: 'SignInController',
         controllerAs: 'vm'
     })
-    .state('sign_up', {
-        url:'/sign_up',
-        templateUrl: 'app/user/sign_up.html',
+    .state('register', {
+        url:'/register',
+        templateUrl: 'app/user/register.html',
         controller: 'SignUpController',
         controllerAs: 'vm'
     })

@@ -6,7 +6,8 @@ var user        = require('./controllers/user'),
 require('../config/passport')(passport);
 
 module.exports = function(app) {    
-    app.post('/api/user', passport.authenticate('local-register'), user.register);
+    app.post('/api/register', passport.authenticate('local-register'), user.register);
+    app.post('/api/login', passport.authenticate('local-login'), user.login);
     
     app.get('/subdomain/blog/', function(request, response) {
         response.sendFile(path.resolve('blog/index.html'));
