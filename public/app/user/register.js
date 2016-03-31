@@ -2,9 +2,9 @@ angular
     .module('app')
     .controller('SignUpController', SignUpController)
 
-SignUpController.$inject = ['Register', 'Email_Validation'];
+SignUpController.$inject = ['Auth', 'Email_Validation'];
 
-function SignUpController(Register, Email_Validation){ 
+function SignUpController(Auth, Email_Validation){ 
     componentHandler.upgradeAllRegistered();
     var vm = this;
     vm.user = null;
@@ -26,18 +26,16 @@ function SignUpController(Register, Email_Validation){
             return;
         }
         
-        var new_user = Register.save(vm.user); 
-        
-        new_user.$promise
-        .then(function(user){
+        Auth.register(vm.user)
+        .then(function () {
             toastr.success('Congratulation, your account has been created!')
         })
-        .catch(function(response) {
-            if(response.status === 401){
+        .catch(function (data) {
+            if(data.status === 401){
                 toastr.warning('Email existed!')
             }else{
                 toastr.error('Server Error!')
             }
-        })
+        });
     }
 }

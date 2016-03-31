@@ -11,13 +11,16 @@
 </head>
 <body ng-app="app" ng-controller="MainController as vm">
 	<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-	  	<header class="mdl-layout__header site-header">
+	  	<header class="mdl-layout__header site-header" ng-cloak>
 	    	<div class="mdl-layout__header-row ">
 	            <a href="/" class="mdl-layout-title mdl-navigation__link" style="color:grey;">Photo</a>
 		        <div class="mdl-layout-spacer"></div>
-	      		<nav class="mdl-navigation mdl-layout--large-screen-only">
+	      		<nav class="mdl-navigation mdl-layout--large-screen-only" ng-if="!vm.user">
 			        <a class="mdl-navigation__link menu_navigation" href="">Blog</a>
 			        <a href="/login" class="mdl-button mdl-button--raised mdl-button--colored mdl-js-button mdl-js-ripple-effect">Sign In</a>
+	      		</nav>
+                <nav class="mdl-navigation mdl-layout--large-screen-only" ng-if="vm.user">
+			        <a class="mdl-button mdl-button--raised mdl-button--colored mdl-js-button mdl-js-ripple-effect" ng-click="vm.logout()">Logout</a>
 	      		</nav>
 	    	</div>
 	  	</header>
@@ -50,9 +53,13 @@
 	<script src="app/common/email_validation.js"></script>
 	<script src="app/shared/register.js"></script>
 	<script src="app/shared/login.js"></script>
+	<script src="app/shared/auth.js"></script>
 	<script src="app/main/main.js"></script>
 	<script src="app/home/home.js"></script>
 	<script src="app/user/login.js"></script>
 	<script src="app/user/register.js"></script>
+	<script src="app/dashboard/home.js"></script>
+	<script src="app/dashboard/photos.js"></script>
+	<script src="app/dashboard/settings.js"></script>
 </body>
 </html>

@@ -11,5 +11,18 @@ exports.register = function (req, res) {
 };
 
 exports.login = function (req, res) {
-	res.json(req.user)
+	res.json({response: req.user})
 };
+
+exports.user_details = function (req, res) {
+	if (req.isAuthenticated()) {
+        res.json({response: req.user})
+    }else{
+        res.json({response: false})        
+    }
+};
+
+exports.logout = function (req, res){
+    req.logout();
+    res.json({response: true})
+}

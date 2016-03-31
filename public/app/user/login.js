@@ -2,9 +2,9 @@ angular
     .module('app')
     .controller('SignInController', SignInController)
 
-SignInController.$inject = ['Login'];
+SignInController.$inject = ['$state', 'Auth'];
 
-function SignInController(Login){ 
+function SignInController($state, Auth){ 
     componentHandler.upgradeAllRegistered();
     var vm = this;
     vm.user = null;
@@ -22,18 +22,17 @@ function SignInController(Login){
             return;
         }        
         
-        var new_user = Login.save(vm.user); 
-        
-        new_user.$promise
-        .then(function(user){
+        Auth.login(vm.user)
+        .then(function(){
             toastr.success('Welcome!')
+            $state.go('dashboard.photos')
         })
-        .catch(function(response) {
-            if(response.status === 401){
+        .catch(function (data) {
+            if(data.status === 401){
                 toastr.warning('Invalid username or password!')
             }else{
                 toastr.error('Server Error!')
             }
-        })
+        });
     }
 }

@@ -82,3 +82,7 @@ body {
 .mdl-textfield--floating-label.is-focused .mdl-textfield__label.float_color{
     color:rgb(33,150,243) !important;
 }
+
+[ng\:cloak], [ng-cloak], .ng-cloak {
+  display: none !important;
+}
