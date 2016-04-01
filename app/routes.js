@@ -1,7 +1,9 @@
-var user        = require('./controllers/user'),
-    path        = require('path'),
-    passport    = require('passport'),
-    LocalStrategy = require('passport-local').Strategy;
+var user            = require('./controllers/user'),
+    photo           = require('./controllers/photo'),
+    upload           = require('./controllers/upload'),
+    path            = require('path'),
+    passport        = require('passport'),
+    LocalStrategy   = require('passport-local').Strategy;
     
 require('../config/passport')(passport);
 
@@ -11,8 +13,11 @@ module.exports = function(app) {
     app.post('/api/user/details', user.user_details);
     app.post('/api/user/logout', user.logout);
     
-    app.get('/subdomain/blog/', function(request, response) {
-        response.sendFile(path.resolve('blog/index.html'));
-    });
+    app.post('/api/album', photo.create_album);
+    app.get('/api/album/:id', photo.get_album);
+    app.put('/api/album', photo.update_album);
+    app.delete('/api/album/:id', photo.delete_album);
+    
+    app.post('/api/upload', upload.image);
 };
 

@@ -5,6 +5,6 @@ angular
 DashboardHomeController.$inject = [];
 
 function DashboardHomeController(){ 
-        componentHandler.upgradeAllRegistered();
+        // componentHandler.upgradeAllRegistered();
 
 }

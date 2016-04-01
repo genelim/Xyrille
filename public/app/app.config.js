@@ -54,6 +54,15 @@ function config($urlRouterProvider,$stateProvider,$locationProvider) {
             check_user : check_user
         }
     })
+    .state('dashboard.image', {
+        url         : '/photos/:id',
+        templateUrl : 'app/dashboard/image.html',
+        controller  : 'DashboardImageController',
+        controllerAs: 'vm',
+        resolve     : {
+            check_user : check_user
+        }
+    })
     .state('dashboard.settings', {
         url         : '/settings',
         templateUrl : 'app/dashboard/settings.html',
@@ -70,7 +79,10 @@ function config($urlRouterProvider,$stateProvider,$locationProvider) {
 }
 
 function check_user($location, Auth){
-    Auth.getUserDetails()
+    return Auth.getUserDetails()
+    .then(function(data){
+        return data;
+    })
     .catch(function(){
         $location.path('/')
     })

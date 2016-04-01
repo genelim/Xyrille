@@ -5,4 +5,6 @@ angular
 DashboardSettingsController.$inject = [];
 
 function DashboardSettingsController(){ 
+            componentHandler.upgradeAllRegistered();
+
 }

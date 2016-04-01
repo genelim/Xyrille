@@ -11,19 +11,13 @@ var express        = require('express'),
     
 mongoose.connect(db.url); 
 
-var subdomainOptions = {
-    base: 'localhost' //base is required, you'll get an error without it.
-};
-
-app.use(require('subdomain')(subdomainOptions));
-
 app.use(bodyParser.json()); 
 app.use(session({secret: 'this is multivendor', saveUninitialized: true, resave: true}));
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(bodyParser.urlencoded({ extended: true })); 
 app.use(bodyParser.json({ type: 'application/vnd.api+json' })); 
-app.use(methodOverride('X-HTTP-Method-Override')); // override with the X-HTTP-Method-Override header in the request. simulate DELETE/PUT
+app.use(methodOverride('X-HTTP-Method-Override')); 
 
 app.use('/app', express.static(__dirname + '/public/app'));
 app.use('/assets', express.static(__dirname + '/public/assets'));
