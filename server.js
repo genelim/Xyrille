@@ -10,7 +10,13 @@ var express        = require('express'),
     db = require('./config/db');
     
 mongoose.connect(db.url); 
+var compression = require('compression')
+// var express = require('express')
 
+// var app = express()
+
+// compress all requests
+app.use(compression())
 app.use(bodyParser.json()); 
 app.use(session({secret: 'this is multivendor', saveUninitialized: true, resave: true}));
 app.use(passport.initialize());
