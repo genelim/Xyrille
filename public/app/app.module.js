@@ -1,1 +1,1 @@
-angular.module('app',['ui.router','ngResource','ngFileUpload']); 
+angular.module('app',['ui.router','ngResource','ngFileUpload','ahdin']); 

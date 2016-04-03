@@ -1,4 +1,19 @@
-<div class="btn btn-default" ngf-select ngf-change="vm.upload($files,this,$index)">Select Image</div>
+<div class="mdl-grid">
+    <div class="mdl-cell">
+        <div class="mdl-card mdl-shadow--2dp" style="width: auto">
+            <div class="mdl-card__title mdl-card--expand">
+                <div ngf-select="vm.upload($files,this,$index)" ngf-drop="vm.upload($files,this,$index)" style="margin: 0 auto;">
+                    <div style="margin: 0 auto; text-align: center;">
+                        <i class="fa fa-hdd-o fa-5x"></i>
+                    </div>
+                    
+                    <p><b>Choose a file</b> or drag it here.</p>
+                </div>
+                <div ngf-no-file-drop>File Drag/Drop is not supported for this browser</div>
+            </div>
+        </div>
+    </div>
+</div>
 <section id="photos">
   <!--<img src="/assets/images/login.jpg" alt="Cute cat">
   <img src="/assets/images/preview.jpg" alt="Serious cat">
@@ -41,10 +56,14 @@ s  <img src="/assets/images/1.jpg" alt="Cute cat">
         <img src="/assets/images/1.jpg" >
     </a>-->
     <a href="path/to/image2.jpg" class="entry">
-        <img src="/assets/images/login.jpg" alt="Serious cat">
     </a>
-    <a href="path/to/image2.jpg">
-        <img src="/assets/images/signup.jpg" alt="Serious cat">
+    <a href="path/to/image2.jpg" class="entry">
+        <img src="/assets/images/preview.jpg" >
+    
+    </a>
+    <a href="path/to/image2.jpg" class="entry">
+        <img src="/assets/images/login.jpg" >
+    
     </a>
 </div>
 <style>
