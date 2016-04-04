@@ -19,5 +19,8 @@ module.exports = function(app) {
     app.delete('/api/album/:id', photo.delete_album);
     
     app.post('/api/upload', upload.image);
+    
+    app.post('/api/image', photo.add_image);
+    
 };
 

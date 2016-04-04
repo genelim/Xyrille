@@ -48,7 +48,6 @@ exports.update_album = function (req, res) {
     })
 };
 
-
 exports.delete_album = function (req, res) {
     Album.find({ _id : req.params.id })
     .remove()
@@ -59,4 +58,29 @@ exports.delete_album = function (req, res) {
             res.json({response: result})
         }
     });
+};
+
+exports.add_image = function (req, res) {
+    Album.findOne({_id: req.body.id})
+    .exec(function(err, result){
+        console.log(req.body)
+        console.log(result)
+        if(err){
+            res.json({response : "Server Error"})
+        }else if(!result){
+            res.json({response: "No Album Found"})
+        }else if(result){
+            result.image.push({url: req.body.url, caption: req.body.caption})
+            console.log(result)
+            result.save(function(error, image_saved){
+                console.log(error)
+                console.log(image_saved)
+                if(error){
+                    res.json({response : "Server Error"})
+                }else{
+                    res.json({response: image_saved})
+                }  
+            })
+        }
+    })
 };

@@ -1,8 +1,8 @@
 <div class="mdl-grid">
     <div class="mdl-cell">
-        <div class="mdl-card mdl-shadow--2dp" style="width: auto">
-            <div class="mdl-card__title mdl-card--expand">
-                <div ngf-select="vm.upload($files,this,$index)" ngf-drop="vm.upload($files,this,$index)" style="margin: 0 auto;">
+        <div class="demo-card-wide mdl-card mdl-shadow--2dp" style="width: auto">
+            <div class="mdl-card__title" ng-style="{background: vm.style}">
+                <div ng-if="!vm.uploaded" ngf-select="vm.upload($files,this,$index)" ngf-drop="vm.upload($files,this,$index)" style="margin: 0 auto; width: 100%;    text-align: center;">
                     <div style="margin: 0 auto; text-align: center;">
                         <i class="fa fa-hdd-o fa-5x"></i>
                     </div>
@@ -10,67 +10,35 @@
                     <p><b>Choose a file</b> or drag it here.</p>
                 </div>
                 <div ngf-no-file-drop>File Drag/Drop is not supported for this browser</div>
+                <div ng-if="vm.uploaded" style="margin: 0 auto; color: white;">
+                    <div style="margin: 0 auto; text-align: center;">
+                        <i class="fa fa-check fa-5x"></i>
+                    </div>
+                    <p><b>Successfully Uploaded.</b> Click Add to proceed</p>
+                </div>
+            </div>
+            <div class="mdl-card__supporting-text">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="width:100%;">
+                    <input class="mdl-textfield__input" type="text" id="album_name" ng-model="vm.caption">
+                    <label class="mdl-textfield__label" for="album_name">Add Caption (Optional)</label>
+                </div>
+            </div>
+            <div class="mdl-card__actions mdl-card--border" style="text-align: center;">
+                <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" ng-click="vm.add_image()">
+                    Add
+                </a>
             </div>
         </div>
     </div>
 </div>
-<section id="photos">
-  <!--<img src="/assets/images/login.jpg" alt="Cute cat">
-  <img src="/assets/images/preview.jpg" alt="Serious cat">
-  <img src="/assets/images/signup.jpg" alt="Serious cat">
-    <img src="/assets/images/login.jpg" alt="Cute cat">
-  <img src="/assets/images/preview.jpg" alt="Serious cat">
-  <img src="/assets/images/signup.jpg" alt="Serious cat">
-  <img src="/assets/images/login.jpg" alt="Cute cat">
-  <img src="/assets/images/preview.jpg" alt="Serious cat">
-  <img src="/assets/images/signup.jpg" alt="Serious cat"> 
-  <img src="/assets/images/1.jpg" alt="Cute cat">
-  <img src="/assets/images/preview.jpg" alt="Serious cat">
-  <img src="/assets/images/signup.jpg" alt="Serious cat">
-  <img src="/assets/images/login.jpg" alt="Cute cat">
-  <img src="/assets/images/preview.jpg" alt="Serious cat">
-  <img src="/assets/images/signup.jpg" alt="Serious cat">
-  <img src="/assets/images/signup.jpg" alt="Serious cat">
-  <img src="/assets/images/signup.jpg" alt="Serious cat">
-  <img src="/assets/images/login.jpg" alt="Cute cat">
-  <img src="/assets/images/1.jpg" alt="Cute cat">
-s  <img src="/assets/images/1.jpg" alt="Cute cat">
-  <img src="/assets/images/login.jpg" alt="Cute cat">
-  <img src="/assets/images/2.jpg" alt="Cute cat">
-  <img src="/assets/images/login.jpg" alt="Cute cat">
-  <img src="/assets/images/2.jpg" alt="Cute cat">
-  <img src="/assets/images/1.jpg" alt="Cute cat">-->
-  <img ng-src="{{vm.image}}"/>
-</section>
-<div id="gallery">
-    <!--<!--<a href="path/to/image1.jpg" class="entry">
-        <img src="/assets/images/preview.jpg" >
-    </a>
-    <a href="path/to/image2.jpg" class="entry">
-        <img src="/assets/images/login.jpg" alt="Serious cat">
-    </a>
-    <a href="path/to/image2.jpg">
-        <img src="/assets/images/2.jpg" alt="Serious cat">
-    </a>
-    <a href="path/to/image1.jpg" class="entry">
-        <img src="/assets/images/1.jpg" >
-    </a>-->
+
+<!--<div id="gallery">
     <a href="path/to/image2.jpg" class="entry">
     </a>
     <a href="path/to/image2.jpg" class="entry">
-        <img src="/assets/images/preview.jpg" >
-    
+        <img src="/assets/images/preview.jpg" >    
     </a>
     <a href="path/to/image2.jpg" class="entry">
         <img src="/assets/images/login.jpg" >
-    
     </a>
-</div>
-<style>
-/*.entry img:hover {
-    opacity: 0.8!important;
-}
-.entry:hover  {
-    background-color: black !important;
-}*/
-</style>
+</div>-->

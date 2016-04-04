@@ -1,7 +1,8 @@
 var mongoose = require('mongoose');
 
 var image = mongoose.Schema({
-    name        : String,
+    url         : String,
+    caption     : String,
     created_date: { type : Date, default: Date.now }
 		
 });
