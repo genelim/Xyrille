@@ -1,9 +1,12 @@
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer">
     <div class="mdl-layout__drawer">
-        <span class="mdl-layout-title">Welcome, Gene lim Ween</span>
+        <header class="demo-drawer-header">
+            <img src="assets/images/default_user.png" class="demo-avatar">
+            <p class="avatar-name">John Doe</p>
+        </header>
         <nav class="mdl-navigation">
-            <a class="mdl-navigation__link" ui-sref="dashboard.photos">Photos</a>
-            <a class="mdl-navigation__link" ui-sref="dashboard.settings">Settings</a>
+            <a class="mdl-navigation__link" ui-sref="dashboard.photos" style="font-size: 18px;"><i class="fa fa-picture-o" style="margin-right: 32px;"></i>Photos</a>
+            <a class="mdl-navigation__link" ui-sref="dashboard.settings" style="font-size: 18px;"><i class="fa fa-cog" style="margin-right: 32px;"></i>Settings</a>
         </nav>        
     </div>
     <main class="mdl-layout__content" ui-view>
@@ -12,3 +15,31 @@
         </div>
     </main>
 </div>
+
+<style>
+    .demo-drawer-header {
+        box-sizing: border-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-justify-content: flex-end;
+        -ms-flex-pack: end;
+        justify-content: flex-end;
+        padding: 16px;
+        height: auto;
+    }
+    .demo-avatar {
+        width: 60px;
+        height: 60px;
+        border-radius: 30px;
+        margin: 0 auto;
+    }
+    .avatar-name{
+        padding-top: 10px;
+        font-size: 24px;
+        margin: 0 auto;
+    }
+</style>

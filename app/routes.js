@@ -21,6 +21,7 @@ module.exports = function(app) {
     app.post('/api/upload', upload.image);
     
     app.post('/api/image', photo.add_image);
-    
+    app.get('/api/image_album/:id', photo.get_image_album);
+    app.put('/api/image_album', photo.update_image_album);
 };
 

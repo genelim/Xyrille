@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Pixylle</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
 	<link rel="stylesheet" href="/libs/material-design-lite/material.min.css"></link>
 	<link rel="stylesheet" href="/libs/components-font-awesome/css/font-awesome.min.css"></link>
 	<link rel="stylesheet" href="/libs/toastr/toastr.min.css"></link>
@@ -14,7 +16,9 @@
 	<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
 	  	<header class="mdl-layout__header site-header" ng-cloak>
 	    	<div class="mdl-layout__header-row ">
-	            <a href="/" class="mdl-layout-title mdl-navigation__link" style="color:grey;">Photo</a>
+	            <a href="/" class="mdl-layout-title mdl-navigation__link" style="color:grey;">
+                    <img src="assets/images/logo.png" height="64px"/>
+                </a>
 		        <div class="mdl-layout-spacer"></div>
 	      		<nav class="mdl-navigation mdl-layout--large-screen-only" ng-if="!vm.user">
 			        <a class="mdl-navigation__link menu_navigation" href="">Blog</a>
@@ -27,10 +31,13 @@
 	  	</header>
 	  	<div class="mdl-layout__drawer">
 	    	<span class="mdl-layout-title">Title</span>
-			<nav class="mdl-navigation">
-		      	<a class="mdl-navigation__link" href="">Blog</a>
-		      	<a class="mdl-navigation__link" href="">Sign In</a>
-			</nav>
+			<nav class="mdl-navigation" ng-if="!vm.user">
+			        <a class="mdl-navigation__link menu_navigation" href="">Blog</a>
+			        <a href="/login" class="mdl-button mdl-button--raised mdl-button--colored mdl-js-button mdl-js-ripple-effect">Sign In</a>
+	      		</nav>
+                <nav class="mdl-navigation" ng-if="vm.user">
+			        <a class="mdl-button mdl-button--raised mdl-button--colored mdl-js-button mdl-js-ripple-effect" ng-click="vm.logout()">Logout</a>
+	      		</nav>
 	  	</div>
 	  	<main class="mdl-layout__content">
 	    	<div class="page-content">

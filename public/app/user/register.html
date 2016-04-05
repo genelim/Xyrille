@@ -1,20 +1,22 @@
 <div class="left_container" style="background: #2C3034 !important; box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);">
     <div class="signin_form">
         <h2 class="button_right light title">Register</h2>
-        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-            <input class="mdl-textfield__input" type="text" id="email" style="border-bottom: 1px solid #b1afaf; color: #B1AFAF" ng-model="vm.user.email"/>
-            <label class="mdl-textfield__label float_color" for="email" style="color: #B1AFAF;">Email</label>
-        </div>
-        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-            <input class="mdl-textfield__input" type="password" id="userpass" style="border-bottom: 1px solid #b1afaf;  color: #B1AFAF" ng-model="vm.user.password"/>
-            <label class="mdl-textfield__label float_color" for="userpass" style="color: #B1AFAF;">Password</label>
-        </div>
-        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored user_login button_left light" ng-click="vm.register()">
-            Register
-        </button>
-        <a href="/login" class="mdl-button mdl-js-button user_login button_right light">
-            Login
-        </a>
+        <form>
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input class="mdl-textfield__input" type="text" id="email" style="border-bottom: 1px solid #b1afaf; color: #B1AFAF" ng-model="vm.user.email"/>
+                <label class="mdl-textfield__label float_color" for="email" style="color: #B1AFAF;">Email</label>
+            </div>
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input class="mdl-textfield__input" type="password" id="userpass" style="border-bottom: 1px solid #b1afaf;  color: #B1AFAF" ng-model="vm.user.password"/>
+                <label class="mdl-textfield__label float_color" for="userpass" style="color: #B1AFAF;">Password</label>
+            </div>
+            <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored user_login button_left light" ng-click="vm.register()">
+                Register
+            </button>
+            <a href="/login" class="mdl-button mdl-js-button user_login button_right light">
+                Login
+            </a>
+        </form>
     </div>
 </div>
 <div class="right_container">

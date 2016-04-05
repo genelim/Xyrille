@@ -1,10 +1,10 @@
 angular
 	.module('app')
-	.service('Image', Image);
+	.service('Images', Images);
 
-Image.$inject = ['$resource'];
+Images.$inject = ['$resource'];
 
-function Image($resource) {
+function Images($resource) {
 	return $resource('/api/image/:id', null, {
 		update: {
       		method: 'PUT'

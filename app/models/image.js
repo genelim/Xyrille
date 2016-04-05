@@ -1,9 +1,11 @@
 var mongoose = require('mongoose');
 
 var image = mongoose.Schema({
-    url         : String,
-    caption     : String,
-    created_date: { type : Date, default: Date.now }
+    url_full        : String,
+    url_thumbnail   : String,
+    caption         : String,
+    star            : Boolean,
+    created_date    : { type : Date, default: Date.now }
 		
 });
 
